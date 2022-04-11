@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "b4462b2f-21c6-4b36-82f5-89cfb25f1ef1",
+		"name": "E-Commerce API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"john@email.com\",\r\n    \"password\":\"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/auth/login",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["auth", "login"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/auth/logout",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["auth", "logout"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"peter\",\r\n    \"email\":\"peter@email.com\",\r\n    \"password\":\"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/auth/register",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["auth", "register"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/users",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["users"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/users/showMe",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["users", "showMe"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/users/6253be4d8c8f588b727c8672",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["users", "6253be4d8c8f588b727c8672"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"john\",\r\n    \"email\": \"john@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/users/updateUser",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["users", "updateUser"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"secret\",\r\n    \"newPassword\":\"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/users/updateUserPassword",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["users", "updateUserPassword"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"emperor bed\",\r\n    \"price\": 23999,\r\n    \"image\": \"https://dl.airtable.com/.attachmentThumbnails/0446e84c5bca9643de3452a61b2d6195/1b32f48b\",\r\n    \"colors\": [\"#0000ff\", \"#000\"],\r\n    \"company\": \"ikea\",\r\n    \"description\": \"Cloud banjo bicycle rights.\",\r\n    \"category\": \"bedroom\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/products",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["products"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/products",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["products"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/products/6253c03c49cea5d928a251de",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["products", "6253c03c49cea5d928a251de"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/products/6253c03c49cea5d928a251de/reviews",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": [
+								"products",
+								"6253c03c49cea5d928a251de",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"bed\",\r\n    \"price\": 22999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/products/6253c03c49cea5d928a251de",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["products", "6253c03c49cea5d928a251de"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/products/6253c13a29c9edd6898c91dc",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["products", "6253c13a29c9edd6898c91dc"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/viren/Desktop/NodeJS-Projects/node-express-course-main/10-e-commerce-api/starter/public/uploads/couch.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/products/uploadImage",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["products", "uploadImage"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Create Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":\"6253c00d49cea5d928a251d8\",\r\n    \"rating\": 5,\r\n    \"title\":\"Good Product\",\r\n    \"comment\":\"Reall Good Quality\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/reviews",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["reviews"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/reviews",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["reviews"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/reviews/6253c19c29c9edd6898c91eb",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["reviews", "6253c19c29c9edd6898c91eb"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\":1,\r\n    \"title\":\"Bad Product\",\r\n    \"comment\":\"Really Bad Quality\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/reviews/6252cfc98e7e6df7bf098918",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["reviews", "6252cfc98e7e6df7bf098918"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/reviews/6252d0118e7e6df7bf098924",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["reviews", "6252d0118e7e6df7bf098924"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n      {\r\n        \"name\": \"chair\",\r\n        \"price\": 2999,\r\n        \"image\": \"https://dl.airtable.com/.attachmentThumbnails/e8bc3791196535af65f40e36993b9e1f/438bd160\",\r\n        \"amount\": 2,\r\n        \"product\": \"6253c00d49cea5d928a251d8\"\r\n      }\r\n    ],\r\n    \"tax\": 1399,\r\n    \"shippingFee\": 1099\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/orders",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["orders"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/orders",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["orders"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/orders/6253c2e129c9edd6898c9211",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["orders", "6253c2e129c9edd6898c9211"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Current User Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/orders/showAllMyOrders",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["orders", "showAllMyOrders"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentIntentId\": \"2RE34R\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-api--v1.herokuapp.com/orders/6253c2e129c9edd6898c9211",
+							"host": [
+								"https://e-commerce-api--v1.herokuapp.com"
+							],
+							"path": ["orders", "6253c2e129c9edd6898c9211"]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
